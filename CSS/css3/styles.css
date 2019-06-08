@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 650px;
+  margin: 30px auto;
+}
+
+body {
+  font-family: arial;
+  line-height: 1.4em;
+}
+
+.box {
+  background: #f4f4f4;
+  border: 1px solid #333;
+  padding: 20px;
+  margin-bottom: 0px;
+}
+
+#box-2 {
+  float: left;
+  width: 30%;
+  height: 454px;
+}
+
+#box-3 {
+  float: right;
+  width: 70%;
+  height: 454px;
+  overflow: auto;
+  
+}
+
+.clear {
+  clear:both;
+}
