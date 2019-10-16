@@ -3,6 +3,12 @@ import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Observable } from "rxjs";
 import { Todo } from "../models/Todos";
 
+const httpOptions = {
+  headers: new HttpHeaders({
+    "Content-Type": "application/json"
+  })
+};
+
 @Injectable({
   providedIn: "root"
 })
@@ -15,23 +21,10 @@ export class TodoService {
 
   getTodos(): Observable<Todo[]> {
     return this.http.get<Todo[]>(`${this.todosUrl}${this.todosLimit}`);
+  }
 
-    // return [
-    //   {
-    //     id: 1,
-    //     title: "First Task",
-    //     completed: false
-    //   },
-    //   {
-    //     id: 2,
-    //     title: "Second Task",
-    //     completed: true
-    //   },
-    //   {
-    //     id: 3,
-    //     title: "Third Task",
-    //     completed: false
-    //   }
-    // ];
+  toggleCompleted(todo: Todo): Observable<any> {
+    const url = `${this.todosUrl}/${todo.id}`;
+    return this.http.put(url, todo, httpOptions);
   }
 }
