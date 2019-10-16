@@ -21,4 +21,13 @@ export class TodoItemComponent implements OnInit {
 
     return classes;
   }
+
+  onToggle(todo) {
+    console.log("toggled");
+    todo.completed = !todo.completed;
+  }
+
+  onDelete(todo) {
+    console.log("deleted");
+  }
 }
