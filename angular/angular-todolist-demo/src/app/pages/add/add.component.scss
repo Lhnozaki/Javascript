@@ -1,0 +1,10 @@
+.form {
+  display: flex;
+  padding: 10px 10px;
+  justify-content: center;
+  align-items: center;
+  input[type="text"] {
+    padding: 5px;
+    width: 500px;
+  }
+}
